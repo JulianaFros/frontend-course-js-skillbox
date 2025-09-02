@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function processUserInput(callback) {
+            const input = prompt('Пожалуйста, введите ваш возраст');
+
+            if (input === null || input.trim() === '') {
+                alert('Введите число, пожалуйста');
+                return;
+            }
+
+            const age = Number(input);
+
+            if (!Number.isFinite(age)) {
+                alert('Введите число, пожалуйста');
+                return;
+            }
+
+            callback(age);
+        }
+
+        function handleAge(age) {
+            alert(age >= 18 ? 'Добро пожаловать на наш взрослый сайт!' : 'Извините, доступ только для совершеннолетних');
+        }
+
+        processUserInput(handleAge);
+    </script>
+</body>
+
+</html>

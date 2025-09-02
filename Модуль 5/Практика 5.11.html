@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="myButton">Увеличить счётчик</button>
+    <button class="clear">Сброс</button>
+    <button class="down">-1</button>
+    <p class="counter">Счётчик: 0</p>
+    <script>
+        const btn = document.querySelector('.myButton');
+        const out = document.querySelector('.counter');
+        const btnclear = document.querySelector('.clear');
+        const btndown = document.querySelector('.down');
+
+        let value = 0;
+        function render() {
+            out.textContent = "Счётчик = " + value;
+            btnclear.disabled = value === 0; //неактивна при 0
+            btndown.disabled = value === 0;  //неактивна при 0
+        }
+        render();
+
+        btn.addEventListener('click', () => {value++; render(); })
+        btnclear.addEventListener('click', () => {value = 0; render(); })
+        btndown.addEventListener('click', () => { if (value > 0) {value--; render(); }})
+    </script>
+</body>
+
+</html>

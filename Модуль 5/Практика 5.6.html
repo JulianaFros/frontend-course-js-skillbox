@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
+        .title {
+            font-weight: 700;
+        }
+
+        .note {
+            color: #555;
+        }
     </style>
 </head>
+
 <body>
     <div class="content"></div>
     <script>
@@ -28,12 +36,17 @@
         paragraph2.append(strong, "проверь структуру DOM в Elements.")
         link.setAttribute('href', '#')
         link.textContent = "Читать далее";
+        link.setAttribute('href', 'https://example.com');
+        link.setAttribute('target', '_blank');
+
+        heading.classList.add('title');
+        paragraph.classList.add('note');
 
         parent.append(heading)
         parent.append(paragraph)
         parent.append(paragraph2)
         parent.append(link)
-
     </script>
 </body>
+
 </html>
