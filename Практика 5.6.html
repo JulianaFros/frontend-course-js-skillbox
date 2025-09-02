@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="content"></div>
+    <script>
+        const parent = document.querySelector('.content')
+        console.log(parent)
+
+        const heading = document.createElement('h2')
+        const paragraph = document.createElement('p')
+        const paragraph2 = document.createElement('p2')
+        const strong = document.createElement('strong')
+        const link = document.createElement('a')
+
+        heading.textContent = "Название статьи";
+        paragraph.textContent = "Любой мой текст";
+        paragraph2.textContent = "Это 2 абзац";
+        strong.textContent = "Важно: ";
+        paragraph2.textContent = "";
+        paragraph2.append(strong, "проверь структуру DOM в Elements.")
+        link.setAttribute('href', '#')
+        link.textContent = "Читать далее";
+
+        parent.append(heading)
+        parent.append(paragraph)
+        parent.append(paragraph2)
+        parent.append(link)
+
+    </script>
+</body>
+</html>
