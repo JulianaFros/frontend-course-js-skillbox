@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -18,36 +18,82 @@
 
             <div class="custom-input">
                 <label class="custom-input__title" for="name">Имя пользователя: </label>
-                <input class="custom-input__input" type="text" id="name" required>
+                <input class="custom-input__input" type="text" id="name" name="name" required>
             </div>
             <div class="custom-input">
                 <label class="custom-input__title" for="email">Email: </label>
-                <input class="custom-input__input" type="email" id="email">
+                <input class="custom-input__input" type="email" id="email" name="email">
             </div>
 
             <div class="radio">
                 <span class="radio__title">Пол:</span>
-                <div class="radio-input">
-                    <label class="radio-input__label" for="female">Женский</label>
-                    <input class="radio-input__input" type="radio" id="female">
-                </div>
-                <div class="radio-input">
-                    <label class="radio-input__label" for="male">Мужской</label>
-                    <input class="radio-input__input" type="radio" id="male">
+                <div class="radio__wrapper">
+                    <div class="radio-input">
+                        <input class="radio-input__input" type="radio" id="female" name="gender" value="Женский">
+                        <label class="radio-input__label" for="female">Женский</label>
+                    </div>
+                    <div class="radio-input">
+                        <input class="radio-input__input" type="radio" id="male" name="gender" value="Мужской">
+                        <label class="radio-input__label" for="male">Мужской</label>
+                    </div>
                 </div>
             </div>
 
             <div class="range">
                 <label class="range__label" for="range">Оценка сервиса: </label>
-                <input type="range" class="range__input" id="range">
+                <input class="range__input" type="range" id="range" name="rate" min="1" max="10" step="1" value="5">
+                <output id="rateOut" for="rate" class="visually-hidden">5</output>
             </div>
 
             <div class="checkbox">
                 <span class="checkbox__title">Интересы пользователя:</span>
-                
+                <div class="checkbox__wrapper">
+                    <div class="checkbox-input">
+                        <input class="checkbox__input" type="checkbox" id="sport" name="interests" value="Спорт">
+                        <label for="sport" class="checkbox__label">Спорт</label>
+                    </div>
+                    <div class="checkbox-input">
+                        <input class="checkbox__input" type="checkbox" id="music" name="interests" value="Музыка">
+                        <label for="music" class="checkbox__label">Музыка</label>
+                    </div>
+                    <div class="checkbox-input">
+                        <input class="checkbox__input" type="checkbox" id="travel" name="interests" value="Путешествия">
+                        <label for="travel" class="checkbox__label">Путешествия</label>
+                    </div>
+                    <div class="checkbox-input">
+                        <input class="checkbox__input" type="checkbox" id="cinema" name="interests" value="Кино">
+                        <label for="cinema" class="checkbox__label">Кино</label>
+                    </div>
+                </div>
             </div>
 
+            <div class="textarea">
+                <label class="textarea__label" for="comment">Дополнительные комментарии:</label>
+                <textarea class="textarea__input" id="comment" name="comment"></textarea>
+            </div>
+
+            <input class="order-form__submit" type="submit" value="отправить">
+
         </form>
+    </section>
+
+    <section class="results" id="results" hidden aria-live="polite">
+        <h2 class="results__title">Результаты опроса:</h2>
+
+        <dl>
+            <dt>Имя: </dt>
+            <dd id="r-name"></dd>
+            <dt>Email: </dt>
+            <dd id="r-email"></dd>
+            <dt>Пол: </dt>
+            <dd id="r-gender"></dd>
+            <dt>Оценка: </dt>
+            <dd id="r-rate"></dd>
+            <dt>Интересы: </dt>
+            <dd id="r-interests"></dd>
+            <dt>Комментарий: </dt>
+            <dd id="r-comment"></dd>
+        </dl>
 
     </section>
 

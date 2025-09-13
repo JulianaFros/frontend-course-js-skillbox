@@ -1,0 +1,88 @@
+.order__title {
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    width: 350px;
+}
+
+.custom-input {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.custom-input__input {
+    max-width: 200px;
+    border-radius: 4px;
+}
+
+.radio__title {
+    display: block;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.radio__wrapper {
+    display: flex;
+}
+
+.range {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.range__input {
+    width: 200px;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkbox__title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.textarea {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.textarea__input {
+    width: 260px;
+    height: 80px;
+    border-radius: 4px;
+}
+
+.order-form__submit {
+    width: 120px;
+    padding: 10px;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+}
