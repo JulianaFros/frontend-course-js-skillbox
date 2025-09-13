@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+
+    <section class="order">
+        <h2 class="order__title">Форма опроса</h2>
+
+        <form class="order-form" id="order-form" novalidate>
+
+            <div class="custom-input">
+                <label class="custom-input__title" for="name">Имя пользователя: </label>
+                <input class="custom-input__input" type="text" id="name" required>
+            </div>
+            <div class="custom-input">
+                <label class="custom-input__title" for="email">Email: </label>
+                <input class="custom-input__input" type="email" id="email">
+            </div>
+
+            <div class="radio">
+                <span class="radio__title">Пол:</span>
+                <div class="radio-input">
+                    <label class="radio-input__label" for="female">Женский</label>
+                    <input class="radio-input__input" type="radio" id="female">
+                </div>
+                <div class="radio-input">
+                    <label class="radio-input__label" for="male">Мужской</label>
+                    <input class="radio-input__input" type="radio" id="male">
+                </div>
+            </div>
+
+            <div class="range">
+                <label class="range__label" for="range">Оценка сервиса: </label>
+                <input type="range" class="range__input" id="range">
+            </div>
+
+            <div class="checkbox">
+                <span class="checkbox__title">Интересы пользователя:</span>
+                
+            </div>
+
+        </form>
+
+    </section>
+
+</body>
+
+</html>
