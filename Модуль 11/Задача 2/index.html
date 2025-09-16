@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+<section class="shipping">
+    <h2 class="shipping__title">Калькулятор стоимость доставки</h2>
+
+    <form class="delivery-form" id="delivery-form" action="#" novalidate>
+        
+        <div class="form-item">
+            <label class="form-item__label" for="title">Название товара:</label>
+            <input class="form-item__input" type="text" name="title" id="title" maxlength="40" required>
+        </div>
+
+        <div class="form-item">
+            <label class="form-item__label" for="weight">Вес товара (кг):</label>
+            <input class="form-item__input" type="number" name="weight" id="weight" min="0.1" step="any" required>
+        </div>
+
+        <div class="form-item">
+            <label class="form-item__label" for="distance">Расстояние доставки (км):</label>
+            <input class="form-item__input" type="number" name="distance" id="distance" min="1" step="1" required>
+        </div>
+
+        <button class="delivery-form__button" type="submit" id="delivery-submit">Добавить товар</button>
+    </form>
+
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th>Название товара</th>
+                <th>Вес (кг)</th>
+                <th>Расстояние (км)</th>
+                <th>Стоимость доставки</th>
+            </tr>
+        </thead>
+        <tbody id="products-body"></tbody>
+    </table>
+</section>
+</body>
+
+</html>

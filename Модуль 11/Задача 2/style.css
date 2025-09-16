@@ -1,0 +1,30 @@
+.product-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 680px;
+}
+
+.product-table th,
+.product-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.delivery-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.delivery-form__button {
+    width: 200px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.form-item__input {
+    border: 1px solid #999999;
+    border-radius: 6px;
+}

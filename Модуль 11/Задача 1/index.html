@@ -18,11 +18,13 @@
 
             <div class="custom-input">
                 <label class="custom-input__title" for="name">Имя пользователя: </label>
-                <input class="custom-input__input" type="text" id="name" name="name" required>
+                <input class="custom-input__input" type="text" id="name" name="name" minlength="2" maxlength="60" required>
+                <span  class="custom-input__error" id="err-name" aria-live="polite"></span>
             </div>
             <div class="custom-input">
                 <label class="custom-input__title" for="email">Email: </label>
-                <input class="custom-input__input" type="email" id="email" name="email">
+                <input class="custom-input__input" type="email" id="email" name="email" inputmode="email" required>
+                <span  class="custom-input__error" id="err-email" aria-live="polite"></span>
             </div>
 
             <div class="radio">

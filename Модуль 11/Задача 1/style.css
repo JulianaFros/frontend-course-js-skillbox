@@ -86,3 +86,17 @@
     margin: -1px;
     overflow: hidden;
 }
+
+.custom-input__error {
+  display: block;
+  min-height: 16px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #ff6b6b;
+}
+
+input[aria-invalid="true"] {
+  border-color: #ff6b6b !important;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,107,107,0.2);
+}

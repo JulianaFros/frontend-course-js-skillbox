@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="card-marker">
+        <h2 class="card-marker__title">Настройка банковской карты</h2>
+
+        <div class="controls">
+
+            <label class="controls__field" for="cardInput">
+                Текст на карте
+                <input type="text" id="cardInput" maxlength="30" placeholder="Введите текст (до 30 символов)">
+            </label>
+
+            <label class="controls__field">
+                Цвет карты
+                <select id="colorSelect" name="colorSelect">
+                    <option value="red">Красный</option>
+                    <option value="blue" selected>Синий</option>
+                    <option value="green">Зеленый</option>
+                </select>
+            </label>
+        </div>
+
+        <p class="card-marker__final" id="card">Ваша карта</p>
+
+    </section>
+</body>
+
+</html>
