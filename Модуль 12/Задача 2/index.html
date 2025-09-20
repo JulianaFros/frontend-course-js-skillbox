@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<section class="promo">
+    <form class="promo__form" id="promo-form" novalidate>
+        <label class="promo__label" for="promo-input">
+            <span class="visually-hidden">Введите промокод</span>
+            <input class="promo__input" type="text" id="promo-input" placeholder="ПРОМОКОД" autocomplete="off">
+        </label>
+
+        <button class="promo__btn" id="promo-btn" type="submit">Применить</button>
+        <button class="promo__reset" id="promo-reset" type="button" hidden>Сброс</button>
+    </form>
+
+    <p class="promo__msg" id="promo-msg" aria-live="polite" hidden></p>
+</section>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<section class="movies">
+    <h2 class="movies__title">Фильмотека</h2>
+    <form class="form" id="movie-form" novalidate>
+        <div class="form__row">
+            <label class="form__row-label" for="title">Название</label>
+            <input class="form__row-input" type="text" id="title" name="title" placeholder="Например, Матрица" required>
+        </div>
+        <div class="form__row">
+            <label class="form__row-label" for="genre">Жанр</label>
+            <input class="form__row-input" type="text" id="genre" name="genre" placeholder="Фантастика" required>
+        </div>
+        <div class="form__row">
+            <label class="form__row-label" for="year">Год</label>
+            <input class="form__row-input" type="number" id="year" name="year" placeholder="1999" required>
+        </div>
+        <div class="form__row form__row--inline">
+            <label class="check">
+                <input class="check__input" type="checkbox" id="watched" name="watched">
+                <span class="check__text">Успели посмотреть?</span>
+            </label>
+        </div>
+
+        <p class="form__error" id="form-error" aria-live="polite"></p>
+
+        <div class="form__actions">
+            <button class="btn" id="add-btn" type="submit">Добавить</button>
+            <button class="btn btn--ok" id="save-btn" type="submit">Сохранить</button>
+            <button class="btn btn--muted" id="cancel-btn" type="submit">Отмена</button>
+        </div>
+    </form>
+
+    <div class="sort">
+        <label class="sort__label" for="sort-select">Сортировка:</label>
+        <select class="sort__select" name="sort-select" id="sort-select">
+            <option value="title-asc">Название (А-Я)</option>
+            <option value="title-desc">Название (Я-А)</option>
+            <option value="genre-asc">Жанр (А-Я)</option>
+            <option value="year-asc">Год (по возрастанию)</option>
+            <option value="year-desc">Год (по убыванию)</option>
+            <option value="watched-first">Сначала просмотренные</option>
+            <option value="watched-last">Сначала непосмотренные</option>
+        </select>
+    </div>
+
+    <div class="table-wrap">
+        <table class="table" id="movies-table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Жанр</th>
+                    <th>Год</th>
+                    <th>Успели посмотреть?</th>
+                    <th>Действие</th>
+                </tr>
+            </thead>
+            <tbody id="movies-tbody"></tbody>
+        </table>
+    </div>
+</section>
+</body>
+
+</html>
