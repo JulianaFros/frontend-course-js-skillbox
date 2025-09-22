@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <form id="film-form">
+        <label for="title">Название:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="genre">Жанр:</label><br>
+        <input type="text" id="genre" name="genre"><br>
+        <label for="releaseYear">Год:</label><br>
+        <input type="text" id="releaseYear" name="releaseYear"><br>
+        <input type="checkbox" id="isWatched" name="isWatched">
+        <label for="isWatched">Успели посмотреть?</label><br>
+        <input type="submit" value="Submit">
+    </form>
+    <form id="filters" class="filters" novalidate>
+        <input id="f-q" type="text" placeholder="Поиск по названию…" />
+        <input id="f-genre" type="text" placeholder="Жанр" />
+        <input id="f-year" type="number" inputmode="numeric" placeholder="Год" />
+        <select id="f-watched">
+            <option value="">Все</option>
+            <option value="true">Просмотренные</option>
+            <option value="false">Непросмотренные</option>
+        </select>
+        <button type="submit">Фильтровать</button>
+        <button type="button" id="f-reset">Сброс</button>
+    </form>
+
+    <div class="bulk-actions">
+        <button id="delete-all">Удалить все</button>
+    </div>
+
+    <table id="film-table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Жанр</th>
+                <th>Год</th>
+                <th>Успели посмотреть?</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody id="film-tbody">
+            <!-- Rows will be inserted here -->
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>
