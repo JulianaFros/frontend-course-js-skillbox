@@ -1,0 +1,58 @@
+:root {
+    --gap: 12px;
+    --card: #fff;
+    --muted: #6b7280;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font: 16px/1.5 system-ui;
+    background: #f8fafc;
+    color: #0f172a
+}
+
+.page {
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 0 16px
+}
+
+h1 {
+    margin: 0 0 16px
+}
+
+.rows {
+    display: grid;
+    gap: 16px
+}
+
+.row {
+    background: var(--card);
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px
+}
+
+.row__title {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: var(--muted)
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--gap)
+}
+
+.img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+    object-fit: cover
+}
