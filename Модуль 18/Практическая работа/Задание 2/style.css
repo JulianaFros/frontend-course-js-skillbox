@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font: 16px/1.5 system-ui;
+    background: #f8fafc;
+    color: #0f172a
+}
+
+.page {
+    max-width: 720px;
+    margin: 24px auto;
+    padding: 0 16px
+}
+
+h1 {
+    margin: 0 0 16px
+}
+
+.track {
+    width: min(100%, 500px);
+    height: 20px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    overflow: hidden;
+    border: 1px solid #d1d5db;
+}
+
+.bar {
+    height: 100%;
+    width: 100%;
+    transform-origin: left center;
+    transform: scaleX(0);
+    background: #0f22ce;
+}
+
+.timer {
+    margin-top: 8px;
+    color: #3c3f44
+}
+
+.controls {
+    margin-top: 16px;
+    display: flex;
+    gap: 8px
+}
+
+button {
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #0ea5e9;
+    color: #fff;
+    cursor: pointer
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: not-allowed
+}
