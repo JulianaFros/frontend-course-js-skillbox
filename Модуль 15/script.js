@@ -3,6 +3,7 @@ const EMAIL = "ovikdevil@gmail.com";
 
 let filmsState = [];
 const filters = { q: "", genre: "", year: "", watched: null };
+let editingId = null;
 
 function validateFilm({ title, genre, releaseYear }) {
   const now = new Date().getFullYear();
@@ -45,6 +46,25 @@ async function addFilm(film) {
   });
   await loadFilms();
   renderTable();
+  document.getElementById("film-form").reset();
+}
+
+async function updateFilm(id, film) {
+  if (!id) {
+    console.error("updateFilm: пустой id, обновление невозможно", id, film);
+    return;
+  }
+  const url = `${BASE_URL}/films/${encodeURIComponent(id)}`;
+  console.debug("PUT", url, "body:", film);
+  console.debug("filmsState ids:", filmsState.map(f => getId(f)));
+  await fetch(url, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json", email: EMAIL },
+    body: JSON.stringify(film),
+  });
+  await loadFilms();
+  renderTable();
+  document.getElementById("film-form").reset();
 }
 
 async function loadFilms() {
@@ -80,6 +100,7 @@ function renderTable() {
   }
 
   view.forEach((film) => {
+    const id = getId(film);
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${escapeHtml(film.title || "")}</td>
@@ -87,8 +108,8 @@ function renderTable() {
       <td>${escapeHtml(film.releaseYear ?? "")}</td>
       <td>${film.isWatched ? "Да" : "Нет"}</td>
       <td>
-        <button class="row-edit" data-id="${film.id}">Редактировать</button>
-        <button class="row-del"  data-id="${film.id}">Удалить</button>
+        <!-- Кнопка редактирования удалена -->
+        <button class="row-del"  data-id="${id}">Удалить</button>
       </td>
     `;
     tbody.appendChild(tr);
@@ -102,6 +123,12 @@ function escapeHtml(s) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function getId(filmOrId) {
+  if (!filmOrId && filmOrId !== 0) return "";
+  if (typeof filmOrId === "string" || typeof filmOrId === "number") return String(filmOrId);
+  return String(filmOrId._id ?? filmOrId.id ?? "");
 }
 
 
@@ -125,23 +152,16 @@ async function deleteAllFilms() {
   if (!confirm("Точно удалить ВСЕ фильмы?")) return;
 
   for (const f of filmsState) {
-    await deleteFilm(f.id);
+    const id = f.id ?? f._id ?? null;
+    if (id) await deleteFilm(id);
   }
 }
 
 document.getElementById("film-tbody").addEventListener("click", (e) => {
   const delBtn = e.target.closest(".row-del");
-  const editBtn = e.target.closest(".row-edit");
   if (delBtn) {
     const id = delBtn.dataset.id;
     if (id && confirm("Удалить этот фильм?")) deleteFilm(id);
-  } else if (editBtn) {
-    const film = filmsState.find(f => String(f.id) === String(editBtn.dataset.id));
-    if (!film) return;
-    document.getElementById("title").value = film.title || "";
-    document.getElementById("genre").value = film.genre || "";
-    document.getElementById("releaseYear").value = film.releaseYear ?? "";
-    document.getElementById("isWatched").checked = !!film.isWatched;
   }
 });
 
@@ -173,7 +193,5 @@ resetBtn.addEventListener("click", () => {
   filters.watched = null;
   renderTable();
 });
-
-document.getElementById("film-form").addEventListener("submit", handleFormSubmit);
 
 loadFilms().then(renderTable);
